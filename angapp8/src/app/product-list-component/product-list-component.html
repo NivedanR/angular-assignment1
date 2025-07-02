@@ -1,0 +1,12 @@
+<p>List od Posts are: </p>
+
+<div *ngIf="products.length>0 ; else noitems">
+    <div *ngFor="let p of products">
+        <p>{{p.id}}</p>
+        <p>{{p.title}}</p>
+
+    </div>
+</div>
+<ng-template #noitems>
+    <p>No items</p>
+</ng-template>

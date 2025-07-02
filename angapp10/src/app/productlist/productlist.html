@@ -1,0 +1,13 @@
+<h2>Product List</h2>
+
+<p>Filter by Category:</p>
+<button (click)="filterByCategory('Electronics')">Electronics</button>
+<button (click)="filterByCategory('Books')">Books</button>
+<button (click)="filterByCategory('Furniture')">Furniture</button>
+<button (click)="filterByCategory('')">Clear</button>
+
+<ul>
+  <li *ngFor="let product of filteredProducts">
+    {{ product.name }} ({{ product.category }})
+  </li>
+</ul>

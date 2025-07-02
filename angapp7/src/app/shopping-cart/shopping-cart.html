@@ -1,0 +1,17 @@
+<p>Shopping Cart</p>
+<ng-container>
+    <form [formGroup]="cartForm" (ngSubmit)="onSubmit()" >
+        <input type="text" placeholder="Enter the name" formControlName="name" />
+        <input type="number" placeholder="Enter the price" formControlName="price" />
+        <button type="submit">Submit</button>
+    </form>
+</ng-container>
+<button (click)="viewCartItems()">View Cart items</button>
+<div *ngIf="showItems">
+    <h1>Cart Items:</h1>
+    <ul>
+        <li *ngFor="let c of cartItems">
+            {{c.name}}-{{c.price}}
+        </li>
+    </ul>
+</div>
